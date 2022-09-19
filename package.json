@@ -1,0 +1,69 @@
+{
+  "name": "vision",
+  "version": "0.0.1",
+  "main": "dist/electron/main/index.js",
+  "description": "Kinda simple Electron + Vue + Vite + PY FastAPI boilerplate.",
+  "author": "Hafiidz",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build:vite": "vue-tsc --noEmit && vite build",
+    "build:py": "pyinstaller py/api.py --onefile --distpath dist",
+    "build:e": "electron-builder",
+    "build": "npm run build:vite && npm run build:py && npm run build:e",
+    "exec": "cd build/win-unpacked/ && start MyApp.exe"
+  },
+  "build": {
+    "appId": "com.hafiidz.fusion",
+    "productName": "MyApp",
+    "copyright": "Copyright © 2022 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "build"
+    }
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.1",
+    "electron": "^20.0.2",
+    "electron-builder": "^23.3.3",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.8",
+    "vite-plugin-electron": "^0.9.3",
+    "vite-plugin-static-copy": "^0.9.0",
+    "vue": "^3.2.37",
+    "vue-tsc": "^0.40.1"
+  },
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_HOSTNAME": "127.0.0.1",
+      "VITE_DEV_SERVER_PORT": 3344,
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:3344"
+    }
+  },
+  "keywords": [
+    "electron",
+    "rollup",
+    "vite",
+    "vue3",
+    "vue"
+  ],
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^3.2.10"
+  }
+}
