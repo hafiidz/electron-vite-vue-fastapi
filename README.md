@@ -9,7 +9,7 @@
 
 # Installation
 
-1. Clone git 
+1. Clone git via `git clone https://github.com/Hafiidz/electron-vite-vue-fastapi.git <folder-name>`
 1. Make sure you have [python](https://www.python.org/downloads/) installed
 1. Activate your virtualenv by using `.venv/scripts/activate` 
 1. Install python requirement using `pip install py/requirements.txt`
