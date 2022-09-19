@@ -15,7 +15,7 @@
     "exec": "cd build/win-unpacked/ && start MyApp.exe"
   },
   "build": {
-    "appId": "com.hafiidz.fusion",
+    "appId": "com.example.myapp",
     "productName": "MyApp",
     "copyright": "Copyright © 2022 ${author}",
     "mac": {
